@@ -10,3 +10,5 @@ echo "Benenne PHP Datei um..."
 mv setup-nextcloud.php index.php
 echo "Setze Rechte..."
 chmod -R 777 *
+echo "Entferne mich selbst... Bye!"
+rm -r installer.sh
