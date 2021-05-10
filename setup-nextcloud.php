@@ -53,12 +53,12 @@ class Setup {
 
 		// do we have PHP 7.2.0 or newer?
 		if(version_compare(PHP_VERSION, '7.2.0', '<')) {
-			$error.='PHP 7.2.0 is required. Please ask your server administrator to update PHP to version 7.2.0 or higher.<br/>';
+			$error.='PHP 7.2.0 wird benötigt. Bitte frage deinen Server Administrator, ob dieser PHP auf die Version 7.2.0 oder höher upgraden kann.<br/>';
 		}
 
 		// running oC on windows is unsupported since 8.1
 		if(substr(PHP_OS, 0, 3) === "WIN") {
-			$error.='Nextcloud Server does not support Microsoft Windows.<br/>';
+			$error.='Nextcloud unterstützt Microsoft Windows nicht.<br/>';
 		}
 
 		foreach (self::$requirements[0]['classes'] as $class => $module) {
@@ -89,7 +89,7 @@ class Setup {
 
 		// do we have write permission?
 		if(!is_writable('.')) {
-			$error.='Kann in dem Installationsverzeichnis nicht schreiben...<br>habe ich hierfür überhaupt Rechte?<br>(chmod -R 766 /var/www/html)';
+			$error.='Kann in dem Installationsverzeichnis nicht schreiben...<br>Habe ich hierfür überhaupt Rechte?<br>(chmod -R 777 *)';
 		}
 
 		return($error);
@@ -618,8 +618,8 @@ input[type="submit"] img, input[type="button"] img, button img, .button img { cu
 		');
 
 		if($nextpage === 2) {
-			echo ('<p class="warning">Fügen sie ein einfaches "." ein, um in dem aktuellen Verzeichnis zu installieren,
-									  oder geben sie den Namen des Verzeichnisses ein, in dem Nextcloud installiert
+			echo ('<p class="warning">Füge ein einfaches "." ein, um in dem aktuellen Verzeichnis zu installieren,
+									  oder gebe den Namen des Verzeichnisses ein, in dem Nextcloud installiert
 									  werden soll:</p>
 				   <input type="text" name="directory" value="" required="required">');
 		}
